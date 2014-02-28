@@ -1,3 +1,8 @@
+/**
+ * Karl Akert
+ * this file initializes some global variables while
+ * also handleing the input parameters for the shell
+ */
 #include "shell.h"
 
 void initShell()
