@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void parseCommand(int *count, char ***args, char* command)
+void parseCommand(int *count, char ***args, char *command)
 {
 	
 	char commandTemp[commandLen];
@@ -17,7 +17,7 @@ void parseCommand(int *count, char ***args, char* command)
 	}
 }
 
-int countArgs(char* command)
+int countArgs(char *command)
 {
 	int count = 0;
 	while(1)
