@@ -39,7 +39,6 @@ void set(char *env, char *value, int set)
 	}
 	else
 	{
-		printf("Here\n");
 		unsetenv(env);
 	}
 }

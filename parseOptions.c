@@ -6,7 +6,7 @@ void parseCommand(int *count, char ***args, char *command)
 	char commandTemp[commandLen];
 	strcpy(commandTemp, command);
 	*count = countArgs(commandTemp);
-	*args = malloc(sizeof(char*) * *count);
+	*args = malloc(sizeof(char*) * (*count + 1));
 	char* arg;
 	int i = 0;
 	arg = strtok(commandTemp, " \n");
@@ -15,6 +15,7 @@ void parseCommand(int *count, char ***args, char *command)
 		(*args)[i++] = arg;
 		arg = strtok(NULL, " \n");
 	}
+	(*args)[*count] = NULL;
 }
 
 int countArgs(char *command)
