@@ -61,20 +61,25 @@ void handleCommand(int argc, char **argv)
 	else if(strcmp(argv[0], "pwd") == 0)
 	{
 		char *path = pwd();
-		printf("%s\n", path);
+		sprintf("%s\n", path);
 		free(path);
 	}
 	else if(strcmp(argv[0], "set") == 0)
 	{
 		char *env;
 		char *value;
-		if(argv[1] != NULL)
+		if(argc > 1)
 		{
 			env = argv[1];
-			if(argv[2] != NULL)
+			if(argc > 2)
 			{
 				value = argv[2];
-				setenv(argv[1], argv[2], 1);
+				int hmm = setenv(env, value, 1);
+				printf("%d\n", hmm);
+				if (hmm != 0)
+				{
+					printf("Error setting\n");
+				}
 			}
 			else
 			{

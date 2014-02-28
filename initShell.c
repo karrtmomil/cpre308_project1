@@ -3,7 +3,7 @@
 void initShell()
 {
 	prompt = "308sh> ";
-	commandLen = 256;
+	commandLen = 1024;
 }
 
 void handleArgs(int argc, char **argv)
