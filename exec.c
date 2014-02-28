@@ -1,3 +1,8 @@
+/**
+ * Karl Akert
+ * This file contains the functions for creating child proceses
+ */
+
 #include "shell.h"
 #include <pthread.h>
 #include <sys/wait.h>
@@ -9,20 +14,11 @@ void back();
 int count;
 char **args;
 
-
+/**
+ * Runs a child process in the fg, the shell waits for it to complete
+ */
 void foreground(int argc, char **argv)
 {
-/*
-	pthread_t tid_foreground;
-
-	pthread_mutex_init(&mutex, NULL);	
-	count = argc;
-	args = argv;
-	printf("parent?: %d\n", getpid());
-	pthread_create(&tid_foreground, NULL, (void*)&execf, NULL);
-
-	pthread_join(tid_foreground, NULL);
-*/
 	int ret, status;
 	ret = fork();
 	if (ret == 0) 
@@ -51,6 +47,9 @@ void foreground(int argc, char **argv)
 
 }
 
+/**
+ * Runs a child process in the background, makes a thread to monitor it
+ */
 void background(int argc, char **argv)
 {
 	pthread_t tid_back;
@@ -74,6 +73,10 @@ void background(int argc, char **argv)
 
 }
 
+/**
+ * a function to be ran as a thread to check for the termination of
+ * a background child process
+ */
 void back()
 {
 	int status;
