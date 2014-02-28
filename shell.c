@@ -103,7 +103,8 @@ void handleCommand(int argc, char **argv)
 		{
 			if (strcmp(argv[argc-1], "&") == 0)
 			{
-				argc--;
+				argv[argc-1] = NULL;
+				background(argc, argv);
 			}
 			else
 			{
