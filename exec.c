@@ -30,7 +30,8 @@ void foreground(int argc, char **argv)
 		/* this is the child process */
 		printf("[%d]\n", getpid());
 		execvp(argv[0], argv);
-		exit(EXIT_SUCCESS);
+		printf("Cannot exec %s: No such file or directory\n", argv[0]);
+		exit(EXIT_FAILURE);
 	} 
 	else 
 	{
@@ -61,7 +62,8 @@ void background(int argc, char **argv)
                 /* this is the child process */
                 printf("[%d]\n", getpid());
                 execvp(argv[0], argv);
-                exit(EXIT_SUCCESS);
+		printf("Cannot exe %s: No Such file or directory\n", argv[0]);
+                exit(EXIT_FAILURE);
         }
         else
         {
