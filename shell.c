@@ -68,18 +68,17 @@ void handleCommand(int argc, char **argv)
 	{
 		char *env;
 		char *value;
-		if(argc > 1)
+		if(argv[1] != NULL)
 		{
 			env = argv[1];
-			if(argc > 2)
+			if(argv[2] != NULL)
 			{
 				value = argv[2];
-				printf("%s here %s\n", env, value);
-				set(env, value, 1);
+				setenv(argv[1], argv[2], 1);
 			}
 			else
 			{
-				set(env, NULL, 0);
+				unsetenv(env);
 			}
 		}
 		else

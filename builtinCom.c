@@ -29,19 +29,20 @@ char *pwd()
 	return path;
 }
 
-void set(char *env, char *value, int set)
-{
-	printf("%s not %s\n", *env, *value);
-	if (set)
-	{
-		printf("%s here %s\n", env, value);
-		setenv(env, value, 1);
-	}
-	else
-	{
-		unsetenv(env);
-	}
-}
+// void set(char *env, char *value, int set)
+// {
+// 	printf("%s not %s\n", env, value);
+// 	if (set)
+// 	{
+// 		printf("%s here %s\n", env, value);
+// 		setenv(env, value, 1);
+// 	}
+// 	else
+// 	{
+// 		printf("Here\n");
+// 		unsetenv(env);
+// 	}
+// }
 
 char *get(char *env)
 {
