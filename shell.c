@@ -74,16 +74,11 @@ void handleCommand(int argc, char **argv)
 			if(argc > 2)
 			{
 				value = argv[2];
-				int hmm = setenv(env, value, 1);
-				printf("%d\n", hmm);
-				if (hmm != 0)
-				{
-					printf("Error setting\n");
-				}
+				set(env, value, 1);
 			}
 			else
 			{
-				unsetenv(env);
+				set(env, NULL, 0);
 			}
 		}
 		else

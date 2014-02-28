@@ -18,7 +18,7 @@ int pid();
 int ppid();
 void cd(const char *path);
 char *pwd();
-// void set(char *env, char *value, int set);
+void set(char *env, char *value, int set);
 char *get(char *env);
 
 #endif
