@@ -1,3 +1,9 @@
+/**
+ * Karl Akert
+ * builtinComm.c
+ * This file contains the functions to execute the commands build into the shell
+ *
+ */
 #include "shell.h"
 
 void bExit()
@@ -29,6 +35,10 @@ char *pwd()
 	return path;
 }
 
+/**
+ * if there was only one param given to set, the set variable determines
+ * to unset the environment variable
+ */
 void set(char *env, char *value, int set)
 {
 	// printf("%s not %s\n", env, value);
