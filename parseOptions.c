@@ -1,3 +1,7 @@
+/**
+ * Karl Akert
+ * this file takes in a command and parses it into an argument array
+ */
 #include "shell.h"
 
 void parseCommand(int *count, char ***args, char *command)

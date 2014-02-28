@@ -1,3 +1,8 @@
+/**
+ * Karl Akert
+ * this file contains main() and alos has a function 
+ * to determine how to handle commands
+ */
 #include "shell.h"
 
 char *prompt;
