@@ -61,7 +61,7 @@ void handleCommand(int argc, char **argv)
 	else if(strcmp(argv[0], "pwd") == 0)
 	{
 		char *path = pwd();
-		sprintf("%s\n", path);
+		printf("%s\n", path);
 		free(path);
 	}
 	else if(strcmp(argv[0], "set") == 0)
@@ -99,6 +99,17 @@ void handleCommand(int argc, char **argv)
 	}
 	else
 	{
+		if (argc > 1)
+		{
+			if (strcmp(argv[argc-1], "&") == 0)
+			{
+				argc--;
+			}
+			else
+			{
+				
+			}
+		}
 		printf("Placeholder for exec\n");
 	}
 }

@@ -20,5 +20,7 @@ void cd(const char *path);
 char *pwd();
 void set(char *env, char *value, int set);
 char *get(char *env);
+void foreground(int argc, char **argv);
+void background(int argc, char **argv);
 
 #endif
