@@ -107,9 +107,13 @@ void handleCommand(int argc, char **argv)
 			}
 			else
 			{
-				
+				foreground(argc, argv);
 			}
 		}
-		printf("Placeholder for exec\n");
+		else
+		{
+			foreground(argc, argv);
+		}
+		//printf("Placeholder for exec\n");
 	}
 }
