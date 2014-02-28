@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void initShell();
-void handleArgs(int argc, char **argv);
-void parseCommand(int *count, char ***args, char* command);
-int countArgs(char* command);
-void handleCommand(int argc, char **argv);
+#include "shell.h"
 
 char* prompt;
 int commandLen;
@@ -31,30 +23,6 @@ int main(int argc, char **argv)
 			printf("Error with stdin\n");
 		}
 	}
-}
-
-void initShell()
-{
-	prompt = "308sh> ";
-	commandLen = 256;
-}
-
-void handleArgs(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		if(strcmp(argv[1], "-p") == 0)
-		{
-			if(argv[2] != NULL)
-				prompt = argv[2];
-		}
-		else
-		{
-			printf("Unknown option: %s\n", argv[1]);
-			exit(EXIT_FAILURE);
-		}
-	}
-
 }
 
 void parseCommand(int *count, char ***args, char* command)
